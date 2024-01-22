@@ -13,7 +13,7 @@ class ParserService(
     fun parseAllPages(baseURL: String, totalPages: Int): List<Car> {
         val allCars = mutableListOf<Car>()
 
-        for (page in 36..totalPages) {
+        for (page in 1..totalPages) {
             val url = "$baseURL?page=$page"
             val carsOnPage = parse(url)
             carService.saveAll(carsOnPage)
